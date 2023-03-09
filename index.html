@@ -4,10 +4,75 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Comments</title>
 </head>
 <body>
-  <script src="script.js"></script>
+  <div class="center-container">
+    <h2 class="subtitle">Задание:</h2>
+    <p class="text">
+      Реализовать блок с комментариями. В качестве "макета" можете использовать любой сайт, с комментариями, который вам нравится.
+      Требований по внешнему виду нет. Ключевое, чтобы более менее аккуратно смотрелось
+      (не было "слипшегося текста" или наоборот космических отступов)
+    </p>
+
+    <h2 class="subtitle">Блок содержит:</h2>
+    <ul class="list">
+      <li class="list__item list__item--1">форму добавления комментария</li>
+      <li class="list__item list__item--2">имя</li>
+      <li class="list__item list__item--2">текст</li>
+      <li class="list__item list__item--2">возможность указать дату или оставить ее пустой</li>
+      <li class="list__item list__item--3">если не задано, то дата текущая</li>
+      <li class="list__item list__item--3">время задавать не надо</li>
+      <li class="list__item list__item--3">формат можете выбрать любой</li>
+      <li class="list__item list__item--2">кнопка отправки</li>
+      <li class="list__item list__item--1">форма должна срабатывать в том числе при нажатии на кнопку enter</li>
+      <li class="list__item list__item--1">добавить валидацию (какие именно ограничения - на свое усмотрение). Если форма заполнена некорректно (например, имя пустое), то рядом с полем сообщение об ошибке</li>
+      <li class="list__item list__item--2">когда в поле начинаем печатать, то ошибка исчезает</li>
+    </ul>
+
+    <h2 class="subtitle">Список комментариев. У каждого комментария:</h2>
+    <ul class="list">
+      <li class="list__item list__item--1">имя</li>
+      <li class="list__item list__item--1">текст</li>
+      <li class="list__item list__item--1">дата, время добавления</li>
+      <li class="list__item list__item--2">если текущая дата, пишем "сегодня, 16:23" (ключевое - слово сегодня, время подставляется)</li>
+      <li class="list__item list__item--2">если вчерашняя дата, пишем "вчера, 18:39"</li>
+      <li class="list__item list__item--1">кнопка удаления комментария (иконка корзины) - при нажатии комментарий удаляется</li>
+      <li class="list__item list__item--1">сердечко лайка - при нажатии выставляется или убирается лайк</li>
+    </ul>
+    <hr>
+
+    <h1 class="page-title">Написать комментарий</h1>
+
+    <form class="form" method="post" action="#">
+      <label class="form__label">
+        Автор
+        <input class="form__author" type="text" name="author" required>
+      </label>
+      <label class="form__label">
+        Дата
+        <input class="form__date" type="date" name="date" value="">
+      </label>
+      <textarea class="form__textarea" name="message" cols="60" rows="8" placeholder="Написать комментарий..." required></textarea>
+      <button class="form__submit" type="submit">Отправить</button>
+    </form>
+   
+    <div class="comments">
+      <h2 class="comments__title">Комментарии</h2>
+    </div>
+
+    <template class="comment-template" id="comment-template">
+      <div class="comment">
+        <p class="comment__author"></p>
+        <p class="comment__date"></p>
+        <p class="comment__text"></p>
+        <button class="comment__remove button-icon" type="button"><span class="visually-hidden">Удалить</span></button>
+        <button class="comment__like button-icon" type="button"><span class="visually-hidden">Нравится</span></button>
+      </div>
+    </template>
+
+    <script src="js/script.js"></script>
+  </div>
 </body>
 </html>

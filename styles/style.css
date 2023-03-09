@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  color: #222222;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.center-container {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.button-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.button-icon:hover,
+.button-icon:focus-visible {
+  opacity: 0.4;
+}
+
+.subtitle {
+  margin-left: 64px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.list__item--1 {
+  padding-left: 12px;
+}
+
+.list__item--2 {
+  padding-left: 24px;
+}
+
+.list__item--3 {
+  padding-left: 36px;
+}
+
+.list__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.list__item--1::before {
+  content: " - ";
+}
+
+.list__item--2::before {
+  content: " - - ";
+  width: 32px;
+}
+
+.list__item--3::before {
+  content: " - - - ";
+  width: 48px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-areas: 
+    "author date"
+    "textarea textarea"
+    "submit submit";
+  flex-direction: column;
+  gap: 16px;
+  padding: 36px;
+}
+
+.form__author {
+  grid-area: author;
+  font-size: 16px;
+}
+
+.form__date {
+  grid-area: date;
+  font-size: 16px;
+}
+
+.form__textarea {
+  grid-area: textarea;
+  font-size: 16px;
+}
+
+.form__submit {
+  grid-area: submit;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comments {
+  padding: 36px;
+}
+
+.comments__title {
+  text-align: center;
+}
+
+.comment {
+  display: grid;
+  grid-template-areas:
+    "author remove"
+    "text text"
+    "date like";
+  grid-template-columns: 1fr 24px;
+  gap: 16px;
+  padding-left: 48px;
+  margin-bottom: 24px;
+
+  margin-bottom: 32px;
+  padding: 16px 32px;
+  background-color: #eceee8;
+  border-radius: 6px;
+}
+
+.comment__author {
+  grid-area: author;
+  font-weight:700;
+  margin: 0;
+}
+
+.comment__date {
+  grid-area: date;
+  margin: 0;
+  font-size: 14px;
+}
+
+.comment__text {
+  grid-area: text;
+  margin: 0;
+}
+
+.comment__like {
+  grid-area: like;
+  background-image: url("../images/heart-empty-icon.svg");
+  align-self: end;
+}
+
+.comment__like--active {
+  background-image: url("../images/heart-fill-icon.svg");
+}
+
+.comment__remove {
+  grid-area: remove;
+  align-self: start;
+  justify-self: end;
+  
+  background-color: rgb(240, 100, 76);
+  background-color: transparent;
+  background-image: url("../images/trash-icon.svg");
+}
+
+
+
+
