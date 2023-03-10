@@ -21,7 +21,7 @@ body {
 
 .center-container {
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 768px;
 }
 
 .button-icon {
@@ -37,56 +37,11 @@ body {
 
 .button-icon:hover,
 .button-icon:focus-visible {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .subtitle {
   margin-left: 64px;
-}
-
-.list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.list__item {
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.list__item--1 {
-  padding-left: 12px;
-}
-
-.list__item--2 {
-  padding-left: 24px;
-}
-
-.list__item--3 {
-  padding-left: 36px;
-}
-
-.list__item::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-}
-
-.list__item--1::before {
-  content: " - ";
-}
-
-.list__item--2::before {
-  content: " - - ";
-  width: 32px;
-}
-
-.list__item--3::before {
-  content: " - - - ";
-  width: 48px;
 }
 
 .page-title {
@@ -94,29 +49,42 @@ body {
 }
 
 .form {
-  display: grid;
-  grid-template-areas: 
-    "author date"
-    "textarea textarea"
-    "submit submit";
+  display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 36px;
 }
 
-.form__author {
-  grid-area: author;
+.form__author,
+.form__date,
+.form__textarea,
+.form__submit {
+  padding: 16px;
+  background-color: #eceee8;
+  border: none;
+  border-radius: 6px;
   font-size: 16px;
 }
 
-.form__date {
-  grid-area: date;
+.form__error {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 16px;
+
+  min-height: 20px;
   font-size: 16px;
+  line-height: 20px;
+
+  color:rgb(240, 100, 76);
+  word-wrap: break-word;
 }
 
 .form__textarea {
-  grid-area: textarea;
-  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+.form__date {
+  color: #757575;
 }
 
 .form__submit {
@@ -124,6 +92,12 @@ body {
   padding: 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #4a9653;
+  color: #f0f0f0;
+}
+
+.form__submit:hover {
+  opacity: 0.8;
 }
 
 .comments {
@@ -187,7 +161,6 @@ body {
   background-color: transparent;
   background-image: url("../images/trash-icon.svg");
 }
-
 
 
 
